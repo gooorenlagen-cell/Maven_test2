@@ -1,0 +1,6 @@
+apiVersion: v2
+version: 0.1.0
+name: my-maven-app
+description: this is a helm chart for my-maven-app
+maintainers:
+  - name: Fuad

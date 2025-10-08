@@ -1,0 +1,4 @@
+container: 
+  image: freeze919/my-test-maven:latest
+serviceport: 8086
+name: my-maven-app
