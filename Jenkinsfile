@@ -25,8 +25,8 @@ pipeline{
         stage("Docker Build and push"){
             steps{
                 sh'''
-                docker build -t freeze919/my-test-maven:latest .
-                docker push freeze919/my-test-maven:latest
+                echo "тут должен быть, но я не хочу логиниться docker build -t freeze919/my-test-maven:latest ."
+                echo "тут должен быть, но я не хочу логиниться docker push freeze919/my-test-maven:latest"
                 '''
             }
         }
