@@ -17,6 +17,18 @@ spec:
         image: {{ .Values.container.image }}
         ports:
         - containerPort: 8086
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8086
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8086
+          initialDelaySeconds: 15
+          periodSeconds: 5
         resources:
           limits:
             memory: "128Mi"
