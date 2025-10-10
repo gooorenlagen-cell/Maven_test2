@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: {{ .Values.name }}
+data:
+    non_confidential.txt: |
+        [someconf]
+        port=1497
+        socket=/.sock
+        buffer_size=16G

@@ -1,0 +1,4 @@
+container: 
+  image: freeze919/test_maven_3:latest
+serviceport: 8086
+name: maven-secret-and-config-volume
