@@ -15,6 +15,17 @@ spec:
       containers:
       - name: {{ .Values.name }}
         image: {{ .Values.container.image }}
+        env:
+        - name: MY_SECRET
+          valueFrom: 
+            secretKeyRef:
+              name: {{.Values.name }}
+              key: some_confidential_text
+        - name: MY_CONFIGMAP
+          valueFrom:
+            configMapKeyRef:
+              name: {{.Values.name }}
+              key: some_non_confidential_data
         ports:
         - containerPort: 8086
         readinessProbe:
@@ -40,8 +51,8 @@ spec:
           terminationGracePeriodSeconds: 40
         resources:
           limits:
-            memory: "128Mi"
+            memory: "512Mi"
             cpu: "500m"
           requests:
-            memory: "64Mi"
+            memory: "256Mi"
             cpu: "250m"
